@@ -1,0 +1,36 @@
+.newsLetter {
+    display: flex;
+    width: 98%;
+    padding-top: 15px;
+    label {
+        width: fit-content;
+        display: flex;
+        margin-right: 15px;
+
+        input {
+            outline: none;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            padding: 5px;
+        }
+
+        button {
+            min-width: 0 !important;
+            background: $cl-primary 50% 50% !important;
+            padding: 10px 5px 10px 10px;
+            margin: 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        svg {
+            transform: rotate(-40deg);
+            display: initial !important;
+        }
+    }
+
+    @media(min-width:960px) {
+        flex-direction: column;
+        padding-top: 0;
+    }
+    
+}

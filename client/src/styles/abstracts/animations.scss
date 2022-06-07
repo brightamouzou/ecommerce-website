@@ -1,0 +1,66 @@
+@keyframes default-button-animation{
+    0%{
+        background-color: transparent;
+        height: 0;
+    }
+    100%{
+        background-color: $btn-hover-bg-primary;
+        height: 100%;
+    }
+
+}
+
+@keyframes default-leave-button-animation{
+    0%{
+        background-color: $btn-hover-bg-primary;
+        height: 100%;
+    }
+    100%{
+        background-color: transparent;
+        height: 0;
+
+    }
+
+}
+
+@keyframes default-link-animation{
+
+    0%{
+        width: 0;
+    }
+
+    100%{
+        width: 90%;
+    }
+}
+
+@keyframes default-leave-link-animation{
+    0%{
+        width: 90%;
+    }
+
+    100%{
+        width: 0;
+    }
+}
+
+
+@keyframes header-sub-item-header-animation{
+    0%{
+        transform: translateY(-100px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideToRight{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px) scale(1.25);
+    }
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}

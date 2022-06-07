@@ -1,0 +1,43 @@
+.connection{
+    font-size: 13px;
+    color: $cl-gray;
+    padding: 70px;
+
+    &__form__header{
+        margin-bottom: 15px;
+        h3{
+            text-align: center;
+        }
+    }
+
+    &__form__footer{
+        margin-top: 15px;
+            text-align: center;
+    }
+    width: 40%;
+    margin: auto;
+    @media(max-width: 1050px) {
+        width: 50%;
+    }
+    @media(max-width: 960px) {
+        width: 60%;
+    }
+    @media(max-width: 768px){
+        width: 70%;
+    }
+    @media(max-width: 568px) {
+        width: 80%;
+    }
+
+    form{
+        a{
+            text-decoration: underline;
+        }
+    }
+    button{
+        width: 100%;
+        margin: auto;
+        margin-top: 15px;
+        
+    }
+}

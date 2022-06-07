@@ -1,0 +1,6 @@
+export const LOADING_SUCCESS = "LOADING_SUCCESS";
+export const LOADING_ERROR = "LOADING_ERROR";
+export const IS_LOADING = "IS_LOADING";
+export const CARD_ITEM_ADD = "CARD_ITEM_ADD";
+export const CARD_ITEM_REMOVE = "CARD_ITEM_REMOVE";
+

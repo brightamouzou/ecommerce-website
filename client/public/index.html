@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+  
+    <title>Ecommerce app</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <scipt src="/headerMobile.js" ></script>
+      <script>
+        let intialpageY=0;
+
+        
+          window.onscroll=(e)=>{
+            let currentPageY=window.pageYOffset;
+            const headers=document.querySelectorAll(".header__menu");
+
+            if(headers)
+              headers.forEach(ele=>{
+         
+                if (currentPageY<intialpageY){
+                  //scroll up
+                  ele.classList.remove("n-show-header");
+                  ele.classList.add("show-header");
+                  // const headers=document.querySelectorAll(".header__menu")
+                  // console.log(headers);
+            
+                }else{
+                  //scroll down
+                  ele.classList.remove("show-header");
+                  ele.classList.add("n-show-header");
+              }
+            })
+
+            intialpageY=currentPageY;
+            
+          }
+          
+      </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+.cartItem{
+    display: table;
+    margin-bottom:20px;
+    div:nth-child(1){
+        vertical-align: top;
+    }
+    .itemImage{
+        display: table-cell;
+        width: 180px;
+        img{
+            width: 100%;
+            
+        }
+    }
+    .itemDesc{
+        color: $cl-gray;
+        padding: 0 20px ;
+        &__name{
+            color: $cl-black;
+        }
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .price{
+
+    }
+
+    .buttons{
+        display: flex;
+        gap: 1rem;
+     
+    }
+}

@@ -1,0 +1,70 @@
+.addColor{
+    button{
+        margin-top: 15px;
+        font-family: inherit;
+        font-size: 15px;
+        border-radius: 3px;
+        display: flex;
+        border: 1px solid rgb(207, 203, 203);
+        width: 100%;
+        color: gray;
+        justify-content: space-between;
+        align-items: center;
+        line-height: -50%;
+        svg{
+            width: 35px;
+            height: 35px;
+            color: #0275d8;
+            background: black 50% 50%;
+        }    
+    }
+}
+
+.addColorForms{
+      
+    fieldset{
+        padding: 10px;
+        margin-top:3px;
+        margin-bottom:3px;
+    }
+
+}
+
+.addColor, .addColorForms{
+    font-size: 14px ;
+
+    .MuiFormControl-root ,.MuiTextField-root, .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+        width: 48% !important;
+        display: inline-flex !important;
+        margin-right: 5px !important;
+        input, *{
+            font-size: 14px ;
+        }
+
+        label{
+            font-size: 12px !important;
+            // transform: translateY(5px);
+            &.css-1pysi21-MuiFormLabel-root-MuiInputLabel-root{
+                transform: translate(14px , 10px);
+            }
+
+            &.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root{
+                transform: translate(14px, -5px);
+                font-size: 10px !important;
+
+            }
+        }
+
+    }
+
+    .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+        margin-top: 5px !important;
+        
+    }
+
+
+
+//    .MuiPaper-root ,.MuiPaper-elevation, .MuiPaper-rounded ,.MuiPaper-elevation1 ,.MuiMenu-paper, .MuiPaper-root, .MuiPaper-elevation, .MuiPaper-rounded ,.MuiPaper-elevation8 ,.MuiPopover-paper .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{
+//         z-index: 5000;
+//     }
+}

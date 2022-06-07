@@ -1,0 +1,26 @@
+.mainOptions{
+    h2{
+        font-family: $ff-categories-header;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+
+
+    &>div{
+        margin-top: 65px !important;
+        text-align: center;
+        margin: auto;
+    }
+
+    & >div:not(.mainSlider){
+        width: 97%;
+        // padding-left: 30px;
+
+    }
+    @media(max-width:960px){
+        // width: 100vw;
+    }
+    
+
+
+}

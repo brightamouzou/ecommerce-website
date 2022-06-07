@@ -1,0 +1,8 @@
+.favorite{
+    svg{
+        width:calc( $svg-width-sm);
+        height: $svg-height-sm;
+        color: $cl-primary;
+    }
+    cursor: pointer;
+}

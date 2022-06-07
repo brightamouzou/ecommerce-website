@@ -1,0 +1,89 @@
+.modalContainer{
+    width: 1px;
+    height: 0px;
+    overflow: hidden;
+    .modal{
+        font-family: $ff-text;
+        inset: 0;
+        background-color: #0000004d;
+        backdrop-filter: blur(.7px);
+        overflow: hidden;
+        height: 100%;
+        z-index: 12;
+
+        &.isOpenned{
+            opacity: 1;
+            position: fixed;
+        }
+        .modalDialogContainer{
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+
+            .modalDialog{
+                margin: 20vh auto;
+                // max-width: calc(50%);
+                position: relative;
+                width: 50%;
+                // z-index: 4000;
+    
+                @media(max-width:768px) {
+                    width: 80%;
+                }
+    
+                @media(max-width:768px) {
+                    width: 90%;
+                }
+    
+    
+                .modalInside{
+                    z-index: 12;
+                    padding:5px  20px 10px 20px;
+                    margin: 15px auto;
+                    background-color: $cl-white;
+                    box-shadow: $box-shaddow-default ;
+                    border-radius: 5px;
+                    text-align: justify;
+                    overflow:hidden;
+                    // transform: translateY(5%);
+                    // @media(max-width:768px){
+                    //     width: 90%;
+                    // }
+            
+                    .modalTitle{
+                        text-align: center;
+                        font-weight: bold;
+                    }
+                    .modalHeader{
+                        display:flex ;
+                        justify-content: space-between;  
+                        margin-bottom: 10px; 
+                        // width: 100%;
+                    }
+            
+                    .modalBody{
+                        margin-top: 10px;
+                        max-height: 80%;
+                        padding-bottom:15px;
+                        overflow-y: auto;
+                        &::-webkit-scrollbar{
+                            display: none;
+                        }
+                        
+                    }
+                    &::-webkit-scrollbar{
+                        display: none;
+                    }
+                }
+        }
+
+            .closeIcon{
+                position: absolute;
+                top: -17px;
+                right: 0;
+            }
+        }
+
+
+    }
+}

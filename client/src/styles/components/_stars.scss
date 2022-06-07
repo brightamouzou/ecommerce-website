@@ -1,0 +1,27 @@
+.stars{
+    span.star{
+        margin-right: 2px;
+    }
+}
+
+.star{
+    svg{
+        min-width: 20px;
+        min-height: 20px;
+    }
+}
+
+.star.checked svg{
+    color:#fdcc0d;
+}
+
+.star.noChecked svg {
+    color:$cl-black;
+    opacity: .8;
+
+}
+
+.starArticle{
+    display: flex;
+    justify-content: space-between;
+}

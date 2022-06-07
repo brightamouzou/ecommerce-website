@@ -1,0 +1,99 @@
+.articleScreen{
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    padding: 30px;
+
+    &ImagesView{
+        // width: 50% !important;
+        height: 100%;
+        &__Mobile{
+            width: 100% !important;
+            .articleScreenSliderItem{
+                display: inline-block;
+                width: 48%;
+                margin: 5px;
+
+                img{
+                    width: 100%;
+                }
+            }
+
+        }
+        .swiper-slide {
+            width: 100% !important;
+
+            img {
+                width: 100%;
+                // height: 100%;
+            }
+        
+        }
+        
+        @media(max-width: 960px) {
+            // flex: .7;
+            &__Mobile {
+                display: none;
+            }
+        }
+
+        @media(min-width: 960px) {
+            .swiper, .swiper-slide{
+                display: none;
+            }
+            flex: .7;
+        }
+   
+    }
+    .aboutArticle{
+        margin-top:10px;
+        flex: .24 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        &__title__price{
+            color: $cl-orange-price;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .description, .article{
+        }
+
+        .articleColorsView{
+            .articleColorView{
+                max-width: 100px;
+                display: inline-block;
+                margin: 5px;
+                img{
+                    width: 100%;
+                }
+                .colorView-active {
+
+                    width: 100%;
+                    img {
+                        border: 1px solid $cl-black;
+                    }
+                }
+            }
+
+            
+        }
+
+        .description{
+            button{
+                border-radius: 145px;
+            }
+        }
+        .addToComponents{
+            button{
+                width: 100%;
+            }
+        }
+    }
+
+    @media(max-width: 960px){
+        flex-direction: column;
+        padding: 10px;
+    }
+
+}

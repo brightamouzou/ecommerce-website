@@ -1,0 +1,39 @@
+.totalCart{
+    align-self: flex-start;
+    @media(max-width:960px){
+        align-self: center;
+    }
+    &__header{
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    table{
+        border-collapse: collapse;
+        
+       td{
+           padding: 15px 15px 15px 0;
+       }
+    }
+
+    tr.total{
+        border-top: .1px solid $cl-gray;
+        border-bottom: 1px solid $cl-gray;
+    }
+
+    abbr{
+        svg{
+            width: 15px;
+            height: 15px;
+        }
+        color: $cl-white;
+        background-color: $cl-black;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    button{
+        width: 100%;
+        margin-top: 12px;
+        padding: 15px;
+    }
+}

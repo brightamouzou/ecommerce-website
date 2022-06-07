@@ -1,0 +1,15 @@
+.contactUs{
+    ul{
+        li{
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            color: $cl-gray !important;
+        }
+
+    }
+    &__label{
+        margin-left: 5px;    
+    }
+
+}

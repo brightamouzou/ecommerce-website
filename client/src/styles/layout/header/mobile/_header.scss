@@ -1,0 +1,151 @@
+.header__mobile{
+    display: flex;
+    justify-content: space-between;
+    button{
+
+        box-shadow: none !important;
+    }
+
+    @media(min-width:960px) {
+        display: none;
+    }
+}
+
+.header__mobile__drawerHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+
+    .brand{
+        width: $w-brand-mobile;
+        height: $h-brand-mobile;
+    }
+    img{
+       object-fit: cover;
+       width: 100%;
+    }
+
+    .closeIcon{
+        align-self: center;
+    }
+}
+
+.header__mobile__drawerBody{
+    width: 95%;
+    margin: auto;
+}
+
+.drawerBody{
+}
+
+
+.header__menu__options.mobile {
+    button{
+        box-shadow: none;
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    a{
+        font-weight: normal !important;
+    }
+    display: flex;
+    flex-direction: column !important;
+    
+    li.menu__item {
+        position: relative;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0 auto;
+        border-bottom: 1px solid;
+        overflow: hidden;
+        font-weight: bold;
+        display: block;
+        height: auto;
+        &[data-active="true"]{
+            overflow: auto !important;
+            h6 svg{
+                transform: rotate(90deg);
+            }
+            .submenus{
+                max-height: 1000vh;
+                opacity: 1;
+            }
+        }
+
+        h6{
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+
+            svg {
+                transition: transform .2s ease;
+            }
+}
+
+
+
+        &:hover {
+            margin: 0;
+        }
+
+        &:hover .submenus>div>h6 {
+            transform: none;
+        }
+        
+        &:hover .submenus>div>div>div {
+            transform: translateY(0);
+        }
+        .submenus{
+            max-height: 0;
+            opacity: 0;
+            width: 95%;
+            transition: opacity .2s , max-height .3s;
+            position: relative;
+            z-index: 10000;
+            transform: translate(-50%,0);
+            padding-top:0;
+            margin: auto;
+            visibility: visible;
+
+            div>div>div,
+            h6 {
+                transform:none;
+                transition: transform .4s ease;
+                font-size: 14px;
+                &:hover a {
+                    opacity: .65;
+                }
+            }
+            
+            h6 {
+                transition: transform .3s ease;
+            }
+    
+            .submenu__item{
+                display: initial;
+
+                .options{
+                    margin-left: 10px;
+                }
+
+               
+            }
+            
+            .submenuMobileHeader{
+                width: 100%;
+                div{
+    
+                    display: flex;
+                    gap: .5rem;
+                    font-weight: bold;
+                    font-size: 30px;
+                    align-items: center;
+                    
+                
+                }
+            }
+        }
+    }
+}

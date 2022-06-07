@@ -1,0 +1,82 @@
+//Font size
+$fs-xs:62.5%;      //Small
+$fs-s:81.25%;      //Small
+$fs-n:100%;         //normal
+$fs-l:125%;         //large
+$fs-xl:200%;        //x large
+
+
+//Font family
+
+$ff-titles:"Neue Plak Condensed","AdihausDIN Cn", Helvitica, sans-serif; //ff  for header
+$ff-t:"Montserrat", Helvitica, "sans-serif";      // ff for text
+
+$ff-categories-header:"Neue Plak Extended Semi","AdihausDIN Cn", Helvitica, sans-serif;
+$ff-header-links:"Neue Plak Regular","AdihausDIN Cn", Helvitica, sans-serif;
+$ff-h:"Neue Plak","Montserrat", Helvitica, sans-serif; //ff  for header
+$ff-text:"Neue Plak Regular","AdihausDIN Cn", Helvitica, sans-serif;
+
+//text Colors
+
+$cl-primary:#12285f;
+$cl-green: #00a34c;
+$cl-white:#ffffff;
+$cl-dark-white:#f1f1f1;
+$cl-gray:gray;
+ //Blanc foncé
+$cl-black:#000000;
+$cl-orange:#d98916;
+$cl-red:#e4002b;
+$cl-input-border-light:rgb(229, 231, 235);
+$cl-orange-price: rgb(255, 115, 0);
+$bg-dark-lighted-dark:rgba(24,24,24,.95);
+//bacground colors
+$bg-light:#ffffff;
+$bg-dark:#000000;
+
+
+//special margins
+$m-header:20px;
+
+//special paddings
+
+//special insets
+
+
+
+//animation variables
+
+
+
+
+//Buttons 
+    //width
+$btn-min-width:3rem;
+$btn-min-padding:8px;
+$btn-min-margin:15px;
+
+    //hover bg
+$btn-hover-bg-primary:$cl-primary;
+
+
+//themes variables
+
+$theme-dark-bg:#000000;
+$theme-white-bg:#ffffff;
+$theme-dark-white-bg:#f1f1f1;
+
+//svg 
+
+$svg-width-sm:40px;
+$svg-height-sm:40px;
+
+$h-svg-width:30px; //Headr svg width
+$h-svg-height:30px; //Headr svg height
+
+//box shaddow
+$box-shaddow-default:10px 10px 5px  5px rgba(0,0,0,.01) , 0 5px  5px 2px rgba(0,0,0,0.1), 0 -5px  5px -5px rgba(0,0,0,0.01) ;
+
+//brand
+
+$w-brand-mobile:35px;
+$h-brand-mobile:35px;

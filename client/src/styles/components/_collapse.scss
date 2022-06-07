@@ -1,0 +1,26 @@
+.collapse{
+    button{
+        
+    }
+    &__header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        svg{
+            transition: .2s ease;
+        }
+        &--unwind{
+            svg{
+                transform: rotate(90deg);
+            }
+            &+.collapse__body{
+                display: block;
+            }
+        }
+
+    }
+    &__body{
+        padding-left: 8px;
+        display: none;
+    }
+}

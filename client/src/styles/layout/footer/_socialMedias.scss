@@ -1,0 +1,20 @@
+.socialMedias{
+
+    &__items{
+        color: $cl-gray;
+        @media(max-width:690px){
+            &.visible {
+                display: flex !important;
+            }
+            
+        }
+        svg {
+            width: $svg-width-sm;
+            height: $svg-height-sm;
+        
+            &:hover {
+                color: $cl-white;
+            }
+        }
+    }
+}
