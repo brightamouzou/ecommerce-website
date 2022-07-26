@@ -6,7 +6,7 @@ function Cart() {
   useEffect(()=>{
     function getCartItemsNumber(){
       let items=localStorage.getItem("cartItems");
-      if(items.length) items=JSON.parse(items)
+      if(items && items.length) items=JSON.parse(items)
       setItemsCount(items.length)
     }
     getCartItemsNumber();
