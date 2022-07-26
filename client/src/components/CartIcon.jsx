@@ -7,7 +7,8 @@ function Cart() {
     function getCartItemsNumber(){
       let items=localStorage.getItem("cartItems");
       if(items && items.length) items=JSON.parse(items)
-      setItemsCount(items.length)
+      if(items)
+        setItemsCount(items.length)
     }
     getCartItemsNumber();
   },[])
