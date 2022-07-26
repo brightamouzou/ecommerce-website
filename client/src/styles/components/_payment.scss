@@ -1,0 +1,58 @@
+.payTrigger {
+    display: none;
+}
+
+.payment{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 80px;
+    gap: 40px;
+
+
+    form{
+
+        .inputWrapper{
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 5px;
+        }
+
+        .inputWrapper.checkbox{
+            height: auto;
+            select{
+                min-height: 40px;
+            }
+
+            
+        }
+
+        
+    }
+
+    .cartPage,.paymentDetails{
+        padding-top: 0;
+    }
+    .paymentDetails{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        
+        .login{
+            width: 98%;
+            padding:0 ;
+            margin-bottom: 30px;
+        }
+        .totalCart{
+            margin-left: 15px;
+            align-self: center;
+
+            &__header{
+                text-align: center;
+            }
+        }
+    }
+}

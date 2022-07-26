@@ -1,0 +1,29 @@
+.mainOptions{
+    h2{
+        font-family: $ff-categories-header;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+
+    &>div{
+        text-align: center;
+        margin: auto;
+        
+    }
+
+    & >div:not(.mainSlider){
+        margin-top: 55px !important;
+        width: 95%;
+        margin: auto;
+        // padding-left: 30px;
+
+    }
+    @media(max-width:960px){
+        // width: 100vw;
+    }
+    
+    .mainSlider .swiper{
+        padding-top: 0 !important;
+    }
+
+}

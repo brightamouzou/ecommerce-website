@@ -1,0 +1,28 @@
+.navbar-admin{
+    // display: flex;
+    // font-family: $ff-header-links;
+    justify-content: space-around;
+    ul{
+        display: flex;
+        justify-content: space-between;
+        flex: .5 1;
+    }
+
+    .navigation.admin-nav{
+        display: none;
+    
+    }
+
+    @media(max-width:768px) {
+        ul{
+
+            display: none;
+        }
+        .navigation.admin-nav{
+            display: initial;
+        }
+        
+    }
+    
+
+}

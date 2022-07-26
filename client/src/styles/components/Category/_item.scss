@@ -1,0 +1,120 @@
+.categoryItem {
+    position: relative;
+    width: 250px !important;
+    // height: 350px;
+    // overflow: hidden;
+    min-height: calc(318px + 62px);
+    transition:  .3s ease-in;
+    @media(max-width:960px) {
+        // width: 200px;
+        // // max-width: 458px;
+        // max-width: 458px;
+        // min-height: auto;
+    }
+
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &:hover {
+        border: 1px solid;
+    }
+    &:hover >&__desc>&__desc__otherImages{
+                    visibility: visible;
+                    opacity: 1;
+                    max-height: 100%;
+    }
+
+    &:hover>&__desc>div:not(.categoryItem__desc__otherImages){
+        display: none;
+    }
+
+    &:hover>&__img>&__price {
+        transform: translateY(-5px);
+    }
+
+
+    &__img {
+        position: relative;
+
+        img {
+            min-height: 318px;
+            width: 100%;
+            height: auto;
+            
+            object-fit: fill;
+
+            // max-height: 417px;
+            // max-width: ;
+            @media(max-width:960px) {
+                // min-height: auto;
+            }
+        }
+    }
+
+    
+
+    &__price {
+        position: absolute;
+        bottom: 5px;
+        left: 10px;
+        font-family: "Neue Plak Regular";
+        color: $cl-orange-price;
+        transition: .2s ease-in;
+    }
+
+    &__AddToFavoris {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    &__desc {
+        position: relative;
+        margin-left: 10px;
+        margin-top: 5px;
+        font-weight: 300;
+        z-index: 5;
+        font-family: Arial, Arial, Helvetica, sans-serif;
+        
+        &__category {
+            color: $cl-gray;
+        }
+
+        div:not(.categoryItem__desc__otherImages){
+            padding-bottom: 5px;
+        }
+
+        &__otherImages {
+            visibility: hidden;
+            opacity: 0;
+            max-height: 0;
+            // transition:visibility .2s, max-height ease-in-out;
+            margin: 5px;
+            display: flex;
+            gap: 8px;
+            text-align: center;
+            // justify-content: center;
+            align-items: center;
+            color: $cl-gray;
+
+            img {
+                position: relative;
+                z-index: 1000;
+                width: 40px;
+                height: 40px;
+            }
+
+            .categoryItemColor {
+                cursor: pointer;
+            }
+
+            .activeCategoryItem {
+                border: 1px solid $cl-primary;
+            }
+        }
+    }
+
+}

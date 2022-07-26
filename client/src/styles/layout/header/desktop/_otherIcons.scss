@@ -1,0 +1,112 @@
+.headerOtherIcons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    // flex: .6;
+    font-size: 16.4px;
+
+    .searchbar {
+        button {
+            border: none;
+            box-shadow: none;
+        }
+        input {
+            font-family: $ff-text;
+            border: none;
+            height: 100%;
+        }
+        svg {
+
+            // transform: translate(-2px, 1px) rotate(-5deg);
+            position: relative;
+
+        }
+       
+    }
+
+    //Avatar
+    .userAvatar{
+        position: relative;
+        &:hover>div.userInfosContainer{
+            display: initial;
+        }
+        .userInfosContainer{
+            &::before,
+            &::after{
+                position: absolute;
+                content: '';
+                z-index: 10000;
+                top: -2px;
+                width: 15px;
+                height: 15px;
+                left: 45%;
+                transform: translateX(-50%);
+            }
+
+            &::before{
+                // background: linear-gradient(-45deg, $cl-white 50%, blue 50%);
+            }
+            &::after{
+                background: linear-gradient(45deg, white 50%, transparent 50%);
+                transform: rotate(135deg);
+            }
+          
+            z-index: 7000;
+            position: absolute;
+            top: calc(100%);
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            min-width: 150px;
+            background: transparent;
+            color: black;
+            display: none;
+            padding: 12px 10px 10px 10px;
+        }
+
+        .userInfos{
+            background: $cl-white;
+            height: fit-content;
+            padding: 5px;
+            border: 1px solid;
+
+            svg{
+            }
+        }
+    }
+
+    svg {
+        box-sizing: border-box;
+        width: 30px !important;
+        height: 30px !important;
+        color: $cl-white !important;
+        padding: 5px;
+
+        &:hover {
+            border-radius: 5px;
+            cursor: pointer;
+            background: rgba(222,255,200, .5) 50% 50%;
+        }
+    }
+
+    @media(max-width:960px) {
+        
+        form.searchbar{
+                float: right;
+                label {
+                    border: none;
+                    justify-content: flex-end;
+                }
+          
+                input {
+                    display: none;
+                }
+
+        }
+        justify-content: flex-end;
+        gap: .7rem;
+        flex: .3;
+    }
+
+}

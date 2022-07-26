@@ -1,0 +1,129 @@
+.footer{
+    background: $cl-black;
+    background: $cl-black;
+    padding: 15px;
+    margin-top: $m-header;
+    width: 100%;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Neue Plak Regular";
+    &__items{
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        align-items: flex-start;
+        // width: 100%;
+        margin: auto;
+        color: $cl-white;
+        background: inherit;
+
+        button{
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center;
+            &>:nth-child(1){
+                font-size: 18px;  
+            }
+        }
+   
+        div{
+            // width: 98%;
+        }
+        svg{
+                margin-right: 5px;
+        }
+
+        .socialMedias{
+            flex-basis: 500px;
+            ul{
+                display: flex;
+                flex-direction: row !important;
+            }
+
+        li:nth-child(1) svg{
+            color: #4267B2;
+        }
+        li:nth-child(2) svg {
+                color: #C13584;
+        }
+        li:nth-child(2) svg {
+            color: #C13584;
+        }
+                    	
+        li:nth-child(3)  svg{
+            color: #1DA1F2;
+        }
+
+         li:nth-child(4)  svg{
+            color: #0072B1;
+        }
+
+        li:nth-child(5) svg {
+            // color: #4078c0;
+        }
+
+                
+                
+
+           
+        }
+
+        button{
+            svg {
+                display: none;
+            }
+        }
+
+        @media(max-width:960px){
+            width: 100%;
+    
+            div {
+                    width: 98%;
+            }
+            flex-flow: column wrap;
+            button {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+                &:focus {
+                    .toggleItem>svg {
+                        transform: rotate(45deg);
+                    }
+                }
+            
+                .toggleItem>svg {
+                    display: initial;
+                    transition: transform .3s;
+                }
+            }
+            
+            button+ul{
+                max-height: 0;
+                opacity: 0;
+                padding-left: 10px;
+                padding-bottom: 10px;
+                border-bottom: .1px solid $cl-gray;
+                transition: opacity .2s ease, max-height .3s ease;
+              
+                &.visible{
+                    max-height: 500px;
+                    opacity: 1;
+                }
+            }
+            .socialMedias{
+                flex-basis: 0;
+            }
+        }
+    }
+
+    .signature{
+        margin-top: 15px;
+        text-align: center;
+        color: $cl-white;
+    }
+ 
+}

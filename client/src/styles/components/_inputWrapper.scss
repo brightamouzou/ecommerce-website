@@ -1,0 +1,35 @@
+.inputWrapper{
+    width: 100%;
+    height: 40px;
+    margin: 12px 5px;
+
+   
+
+    &.checkbox{
+        display: flex;
+        align-items: center;
+
+        height: auto;
+        label{
+            margin-left: 10px;
+            font-size: 13px;
+            color: $cl-gray;
+        }
+        input{
+            height: 30px;
+            width: 30px;
+        }
+    }
+    input, select{
+        height: 100%;
+        width: 100%;
+        border: 1px solid $cl-gray;
+        outline: none;
+        padding: 5px;
+        overflow: hidden;
+        
+        &::placeholder{
+
+        }
+    }
+}

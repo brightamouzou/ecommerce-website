@@ -1,0 +1,25 @@
+.contactUs{
+    // border-right: 1px solid $cl-gray;
+    font-family: Arial, Helvetica, sans-serif;
+    ul{
+        li{
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            color: $cl-gray !important;
+            font-size: 14px;
+
+        }
+        li:nth-child(1){
+            color: #00476C;
+        }
+    }
+    &__label{
+        // margin-left: 5px;    
+    }
+
+    @media(max-width: 768px){
+        border: none;
+    }
+}
