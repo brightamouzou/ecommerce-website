@@ -23,7 +23,7 @@ require("dotenv").config();
 
 //Uses
 // app.use(helmet())
-app.use(cors())
+// app.use(cors(""))
 app.use(morgan("dev"));
 app.use(express.json());
 
@@ -59,9 +59,7 @@ app.post("/api/create-payement-session", payementController);
 
 app.use("/api/user-checks", isAuth, userCheckRoutes);
 
-// app.use("/api/user-checks", (req,res)=>{
-//   console.log(req.body);
-// });
+
 
 app.use("/api/users",userRoutes);
 app.use("/api/admin", adminRoutes);
@@ -69,15 +67,15 @@ app.use("/api/admin", adminRoutes);
 
 //Serve frontend
 // if (process.env.NODE_ENV === "production") {
-  // app.use(express.static(path.join(__dirname, "client/build")));
+  app.use(express.static(path.join(__dirname, "client/build")));
 
 
-  // app.get("*", (req, res) =>{
-  //   res.sendFile(
-  //     path.resolve(__dirname,"client", "build", "index.html")
-  //   )
-  // }
-  // );
+  app.get("*", (req, res) =>{
+    res.sendFile(
+      path.resolve(__dirname,"client", "build", "index.html")
+    )
+  }
+  );
 // }else{
     
 //     // res.send("Please run to production")
