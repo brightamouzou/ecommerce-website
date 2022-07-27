@@ -79,7 +79,7 @@ function SignupForm({onSubmit,error}) {
             <div className="errorBox t-center m5">
               <span className="t-danger">
                 {formik.errors ? (
-                  <div>{Object.values(formik.errors)[0].toString()}</div>
+                  <div>{Object.values(formik.errors).length ? Object.values(formik.errors)[0].toString():""}</div>
                 ) : null}
               </span>
             </div>

@@ -25,7 +25,9 @@ function MobileHeader() {
       </WrapperTemplate>
 
       <div className="brand">
-        <img src={Logo} alt="" />
+        <Link to={"/"} exact>
+          <img src={Logo} alt="" />
+        </Link>
       </div>
 
       <HeaderOtherIcons />
