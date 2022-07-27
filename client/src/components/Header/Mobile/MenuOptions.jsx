@@ -21,15 +21,15 @@ function MenuOptions() {
           const h6 = li.querySelector("h6");
 
           // console.log(svg);
-          // h6.addEventListener("click", (e) => {
-          //   e.stopPropagation();
-          //   console.log("clicked");
-          //   if (li.dataset.active =="true") {
-          //     li.dataset.active = false;
-          //     return;
-          //   }
-          //   li.dataset.active = true;
-          // });
+          h6.addEventListener("click", (e) => {
+            e.stopPropagation();
+            console.log("clicked");
+            if (li.dataset.active =="true") {
+              li.dataset.active = false;
+              return;
+            }
+            li.dataset.active = true;
+          });
 
           if (!li.dataset.active) {
           }
@@ -60,7 +60,7 @@ function MenuOptions() {
 
       <div className="mobileApp">
         <button className="isDark">
-          <Link to={"/login"}>S'inscrire/Se connecter</Link>
+          <a href={"/login"}>S'inscrire/Se connecter</a>
         </button>
       </div>
     </>

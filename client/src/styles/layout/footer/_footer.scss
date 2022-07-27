@@ -64,10 +64,6 @@
             // color: #4078c0;
         }
 
-                
-                
-
-           
         }
 
         button{
@@ -78,9 +74,10 @@
 
         @media(max-width:960px){
             width: 100%;
+            gap:0;
     
             div {
-                    width: 98%;
+                    width: 100%;
             }
             flex-flow: column wrap;
             button {
