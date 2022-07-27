@@ -30,7 +30,7 @@ function CartItems() {
        items = JSON.parse(items);
        setCarItems(items);
      }
-    //  console.log(items);
+     console.log(items);
    }, []);
   useEffect(()=>{
   }, [])

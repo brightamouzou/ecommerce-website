@@ -68,7 +68,6 @@ app.use("/api/admin", adminRoutes);
 
 
   app.get("*", (req, res) =>{
-    console.log(req);
     res.sendFile(
       path.resolve(__dirname,"client", "build", "index.html")
     )

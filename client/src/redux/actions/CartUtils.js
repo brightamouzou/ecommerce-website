@@ -61,6 +61,7 @@ export const addToCart=(artcileSlug, articleCategory,colorId,infos)=>async(dispa
             });
 
             let storedItems=localStorage.getItem("cartItems");
+            console.log(storedItems);
             if(storedItems) storedItems=JSON.parse(storedItems);
             if(storedItems && storedItems.length){
                 let index=storedItems.findIndex(ele=>JSON.parse(ele)["colorId"]==colorId);

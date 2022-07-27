@@ -44,7 +44,7 @@ function AboutArticle({ article }) {
     dispatch(
       addToCart(slug, category, colorId, {
         size:selectedSize?  selectedSize.toString():article.category == "shoes" ? selectedSize.toString() : "XL",
-        quantity: selectedQuantity.toString(),
+        quantity: selectedQuantity,
       })
       );
       snackBarAlertSetter("Produit ajouté au panier avec succès",true,2000,"success");
