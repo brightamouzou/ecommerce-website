@@ -17,7 +17,7 @@ function AboutArticle({ article }) {
   const dispatch = useDispatch();
   const snackBarAlertSetter=useContext(SnackbarContext);
   const [selectedSize,setSelectedSize]=useState(null);
-  const [selectedQuantity, setSelectedQuantity] = useState(null);
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
   const [sizeError, setSizeError] = useState("");
   const [quantityError, setQuantityError] = useState("");
 
