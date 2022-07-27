@@ -1,3 +1,4 @@
+import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
@@ -64,7 +65,7 @@ function FavoriteItem({item}) {
       </div>
     </div>
   ) : (
-    <></>
+    <CircularProgress/>
   );
 }
 

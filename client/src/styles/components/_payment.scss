@@ -9,10 +9,14 @@
     justify-content: center;
     margin-top: 80px;
     gap: 40px;
+    overflow-x: auto;
 
 
+    @media(max-width:690px){
+        flex-direction: column;
+    }
     form{
-
+        margin: 25px;
         .inputWrapper{
             flex-direction: column;
             justify-content: center;

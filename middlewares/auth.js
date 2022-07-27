@@ -2,12 +2,12 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 module.exports=(req, res, next) => {
-  console.log(req.body);
+  console.log('again');
   try {
     const token = req.headers.authorization.split(" ")[1];
     const decodedToken = jwt.verify(token, process.env.JWT_SCECRET);
     const userId = decodedToken.userId;
-    if (!req.body ||  (req.body.userId && req.body.userId !== userId)) {
+    if (!req.body.userId ||  (req.body.userId && req.body.userId !== userId)) {
       throw "User ID non valable";
     } else {
       next();

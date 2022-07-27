@@ -84,26 +84,33 @@ export const addToFavorite=(articleColorId,articleSlug,articleCategory)=>async d
     const authToken = cookies.get("authToken") ? cookies.get("authToken") : null;
     const isAuthConfirmation=await isAuth();
 
-    //console.log("want to add");
-    if (userId && authToken&& isAuthConfirmation.isAuthentificated ) {
-      let {data:res}=await axios.post(
-        "/api/users/favorite",
-        {
-          colorId: articleColorId,
-          slug: articleSlug,
-          userId: userId,
-          category: articleCategory,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${authToken} `,
-          },
-        }
-      );
+    try{
 
-      //console.log(res);
-    } else {
-      document.location = "/login";
+      //console.log("want to add");
+      if (userId && authToken&& isAuthConfirmation.isAuthentificated ) {
+        let {data:res}=await axios.post(
+          "/api/users/favorite",
+          {
+            colorId: articleColorId,
+            slug: articleSlug,
+            userId: userId,
+            category: articleCategory,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${authToken} `,
+            },
+  
+          }
+        );
+        //console.log(res);
+      } else {
+        // console.log('redirect normally');
+        // document.location = "/login";
+      }
+    }catch(err){
+        // console.log("redirect normally");
+        // document.location = "/login";
     }
 }
 

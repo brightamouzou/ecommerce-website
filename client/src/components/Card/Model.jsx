@@ -14,7 +14,7 @@ function ModelCard({large, medium, desc}) {
                 <source media='(min-width:960px)' srcSet={large}/>
                 <source media='(min-width:600px)' srcSet={medium}/>
                 {/* <source srcSet={props.default}/> */}
-                <img src={large} alt={"shop for"+desc} />
+                <img src={medium} alt={"shop for"+desc} />
             </picture>
         </div>
     </div>

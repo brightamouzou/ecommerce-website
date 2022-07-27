@@ -9,7 +9,7 @@ export const totalPriceContext = createContext();
 function Cart({OnPaiement}) {
   const [totalCartPrice, setTotalCartPrice] = useState({});
 
-  console.log(OnPaiement);
+  // console.log(OnPaiement);
   
   return (
     <div className="cart cartPage">

@@ -40,7 +40,7 @@ function Payment() {
     const totalCart = document.querySelector(".totalCart");
     const shippingAddressForm = document.querySelector(".paymentDetails");
 
-    
+    document.body.style.overflowX='auto'
     if(totalCart){
       shippingAddressForm.appendChild(totalCart,totalCart);
     }

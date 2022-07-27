@@ -7,6 +7,7 @@ import React, {
 import { Link } from "react-router-dom";
 import { SnackbarContext } from "../../contexts/SnackBar";
 import {totalPriceContext } from "../../pages/Cart";
+import { addToFavorite as addToFavoriteAction } from "../../redux/actions/user";
 import { fetchData } from "../../utils/api_calls/fethingArticleColor";
 import LoadingSomeWhere from "../LoadingSomeWhere";
 
@@ -77,6 +78,11 @@ function CartItem({ item, idx, items, setter }) {
     //Dispatch an action to get all the cartItem informations from the backend
   }, []);
 
+  function addToFavorite(){
+
+
+  }
+
   useEffect(() => {
     if (cartItem)
       totalPriceCont.setter((v) => ({
@@ -107,7 +113,7 @@ function CartItem({ item, idx, items, setter }) {
             <div className="itemDesc__quantity">Quanité : {item.qty}</div>
 
             <div className="buttons">
-              <button>Deplacez vers les favoris</button>
+              <button onClick={addToFavorite}>Deplacez vers les favoris</button>
               <button onClick={() => removeFromCart()}>
                 Supprimer du panier
               </button>

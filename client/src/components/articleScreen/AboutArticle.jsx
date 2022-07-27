@@ -10,11 +10,34 @@ import { useDispatch} from "react-redux";
 import { addToCart } from "../../redux/actions/CartUtils";
 import { SnackbarContext } from "../../contexts/SnackBar";
 import { addToFavorite as addToFavoriteAction } from "../../redux/actions/user";
+import {isAuth as isAuthAction} from "../../utils/api_calls/isAuth"
+import { useHistory } from "react-router-dom";
+import requireAuthSmallComponent from "../requireAuthSmallComponent"
+
+const AddToFavoriteComp = ({ colorId, slug, category }) => {
+  const dispatch = useDispatch();
+  async function addToFavorite() {
+    dispatch(addToFavoriteAction(colorId, slug, category));
+  }
+  return (
+    <span onClick={addToFavorite}>
+      <AddFavoriteButton />
+    </span>
+  );
+};
+
+const CustomFavoriteComp = requireAuthSmallComponent(
+  AddToFavoriteComp,
+  document.location.pathname.slice(1),
+  "Article ajouté au favoris avec succès"
+);
+
 function AboutArticle({ article }) {
   const { slug, category} = article;
   const colorId=article.colorObject.currentColorId;
   let colorsObjects;
   const dispatch = useDispatch();
+  const history=useHistory();
   const snackBarAlertSetter=useContext(SnackbarContext);
   const [selectedSize,setSelectedSize]=useState(null);
   const [selectedQuantity, setSelectedQuantity] = useState(1);
@@ -22,13 +45,7 @@ function AboutArticle({ article }) {
   const [quantityError, setQuantityError] = useState("");
 
 
-  function addToFavorite(){
-    try{
-      dispatch(addToFavoriteAction(article.colorId,article.slug,article.category))
-      snackBarAlertSetter("Produit ajouté aux favoris avec succès",true,2000,"success");
-    }catch(err){
-    }
-  }
+  
 
   function addArticleToCart() {
     if(!selectedSize){
@@ -122,7 +139,13 @@ function AboutArticle({ article }) {
             <div className="aboutArticle__quantity ">
               <h3>Quantité</h3>
               <div className="t-danger">{quantityError}</div>
-              <input type="number" value={selectedQuantity} onChange={(e)=>setSelectedQuantity(e.target.value)} defaultValue="1" min={"1"} />
+              <input
+                type="number"
+                value={selectedQuantity}
+                onChange={(e) => setSelectedQuantity(e.target.value)}
+                defaultValue="1"
+                min={"1"}
+              />
             </div>
           </div>
           <div className="aboutArticle__availableSizes sizeSelect"></div>
@@ -131,9 +154,14 @@ function AboutArticle({ article }) {
               <AddToCartButton />
             </span>
 
-            <span onClick={addToFavorite}>
-              <AddFavoriteButton />
-            </span>
+            {/* <span onClick={addToFavorite}> */}
+            <CustomFavoriteComp
+              colorId={colorId}
+              slug={slug}
+              category={category}
+            />
+
+            {/* </span> */}
           </div>
           <div className="description">
             <Collapse headerMessage={"Description"}>

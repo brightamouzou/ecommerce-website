@@ -14,7 +14,7 @@ const socialMedias = [
 
   {
     icon: <InstagramIcon />,
-    link: "http://instagram.com/babfingers",
+    link: "http://instagram.com/bab_fingers",
   },
 
   {
