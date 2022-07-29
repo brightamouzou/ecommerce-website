@@ -91,7 +91,7 @@ const CategoryItem =  React.forwardRef(({ item, classNames, ...others },ref) => 
           /> */}
         </Link>
 
-        <div className="categoryItem__price">{localItem.price} €</div>
+        <div className="categoryItem__price">{localItem.price/100} €</div>
 
         <div className="categoryItem__AddToFavoris" onClick={addToFavorites}>
           <Favorite isLiked={false} />

@@ -1,6 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import React, {useEffect } from "react";
 import { useState } from "react";
-import { filterStateContext } from "../../pages/FilterArticlesPage";
 import ArticleCategoryList from "../ArticleCategoryList";
 import LoadingSomeWhere from "../LoadingSomeWhere";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";

@@ -11,28 +11,28 @@ const Novelties = ({onMobile}) => {
             "Meilleur rapport Qualité/Prix":"http://localhost:3000/"
         },
         nouveautesHommes:{
-            "Chaussures":"#link",
-            "Vetements":"#link",
-            "Equipements et accessoires":"#link"
+            "Chaussures":"",
+            "Vetements":"",
+            "Equipements et accessoires":""
         },
 
         nouveautesFemmes:{
-            "Chaussures":"#link",
-            "Vetements":"#link",
-            "Equipements et accessoires":"#link"
+            "Chaussures":"",
+            "Vetements":"",
+            "Equipements et accessoires":""
         },
 
         nouveautesEnfants:{
-            "Chaussures":"#link",
-            "Vetements":"#link",
-            "Equipements et accessoires":"#link"
+            "Chaussures":"",
+            "Vetements":"",
+            "Equipements et accessoires":""
         }, 
 
         rechercheParMarque:{
-            "Adidas":"#link",
-            "Puma":"#link",
-            "Nike":"#link",
-            "Reebok":"#link",
+            "Adidas":"",
+            "Puma":"",
+            "Nike":"",
+            "Reebok":"",
             
         }
 

@@ -109,9 +109,7 @@ function AboutArticle({ article }) {
               {article.category} {article.sex}
             </div>
             <div className="aboutArticle__title__price">
-              {article.price.toString().slice(0, -2) +
-                "," +
-                article.price.toString().slice(-3, -1)}{" "}
+                {Number(Number(article.price)/100).toFixed(2)}
               $
             </div>
           </div>

@@ -3,31 +3,15 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 // import { Routes,Router, Route, useParams } from "react-router-dom";
 // import { Router } from "react-dom";
 import Header from "./components/Header";
-import { buttonEvent, linkEvent } from "./utils/events/params1";
-import {
-  headerMenuItems,
-  simulateHoverOnMenuItem,
-} from "./utils/events/header";
-import MainSlider from "./components/Sliders/MainSlider";
+
 import Footer from "./components/Footer";
 import MainOptions from "./components/MainOptions";
-import indexAdmin from "./components/Admin";
-import Navbar from "./components/Admin/Navbar";
-import NewArticle from "./pages/Admin/newArticle";
 import SnackbarContextComponent from "./contexts/SnackBar";
-import { ModalContext } from "./contexts/Modal";
 import ModalContextComponent from "./contexts/Modal";
 import HeaderOpenedContextComponent from "./contexts/mobileHeaderContext";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Cart from "./pages/Cart";
-import { Provider } from "react-redux";
-import store from "./redux/store";
-
-import ClothesShop from "./pages/ClothesShop";
-import ShoesShop from "./pages/ShoesShop";
-import AccessoriesShop from "./pages/AccessoriesShop";
-import MainLoading from "./components/MainLoading";
 import { BrowserRouter, Switch, Route , useParams, withRouter, useHistory} from "react-router-dom";
 import MenuOptions from "./components/Header/Mobile/MenuOptions";
 import ArticlesPage from "./pages/ArticlesPage";
@@ -61,24 +45,8 @@ function App(props) {
   }
 
   useEffect(() => {
-    // buttonEvent();
-    // linkEvent();
-    headerMenuItems();
-    console.log(a);
     setIsLoading(false);
 
-    // history.push({
-    //   // pathname:"/s/articles/men",
-    //   search:'?a=2&b=4',
-    //   // state:{isActive:true}
-    // })
-
-    // dispatch(loadMen("shoes"));
-    // dispatch(getSpecificSubCategory("clothes","tShirts"));
-  
-    
-    // simulateHoverOnMenuItem();
-    // console.log(params);
   }, []);   
 
   return (
