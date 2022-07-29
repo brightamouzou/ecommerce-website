@@ -1,7 +1,7 @@
 # Ecommerce Website with React JS & Node JS 
 This is a full ecommerce app with all required functionnalities
 
-![BAB calc](https://raw.githubusercontent.com/brightamouzou/ecommerce-website/master/client/public/assets/images/project_images/8.png)
+![BAB calc](https://raw.githubusercontent.com/brightamouzou/ecommerce-website/master/client/public/project_images/8.png)
 
 ### Features
 
