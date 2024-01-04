@@ -1,0 +1,16 @@
+.cart.cartPage{
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15px;
+
+    .cartItems{
+    }
+    @media(max-width: 960px){
+        flex-flow:column wrap ;
+        align-items: flex-start;
+        
+    }
+}

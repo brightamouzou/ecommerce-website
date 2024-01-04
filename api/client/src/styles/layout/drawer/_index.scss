@@ -1,0 +1,41 @@
+.drawer{
+    svg{
+        color: inherit !important;
+    }
+    button{
+        display: flex;
+        align-items: center;
+    }
+}
+
+.drawerHeader{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #040720;
+    padding: 20px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 11;
+    flex-basis: 60px;
+}
+
+
+.drawerBody{
+    flex-shrink: 1;
+}
+
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper{
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper{
+    transition: all .3s;
+}
+

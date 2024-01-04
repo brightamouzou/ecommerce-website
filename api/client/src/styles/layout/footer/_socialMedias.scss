@@ -1,0 +1,28 @@
+.socialMedias{
+    // border-right: 1px solid $cl-gray ;
+    &__items{
+        color: $cl-gray;
+       
+        svg {
+            width:calc( $svg-width-sm - 10px);
+            height: calc($svg-height-sm - 10px);
+        
+            &:hover {
+                color: $cl-white;
+            }
+        }
+    }
+    @media(max-width:690px) {
+        border: none;
+        &__items {
+            ul {
+                display: flex;
+                flex-direction: row !important;
+            }
+            &.visible {
+                display: flex !important;
+            }
+        }
+
+    }
+}

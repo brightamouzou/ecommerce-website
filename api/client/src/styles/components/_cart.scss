@@ -1,0 +1,21 @@
+.cart{
+    position: relative;
+   svg{
+       width: $h-svg-width;
+       height: $h-svg-height;
+   }
+
+   .notification{
+        position: absolute;
+        background:$cl-orange ;
+        width: 20px;
+        height: 20px;
+        transform: translateY(-45%);
+        left: 60%;
+        padding: 5px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+   }
+}

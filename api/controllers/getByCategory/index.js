@@ -1,3 +1,4 @@
+const e = require("express");
 const { Mongoose } = require("mongoose");
 const Article = require("../../models/Article");
 const Color = require("../../models/Color");
@@ -13,10 +14,13 @@ exports.getSpecificArticle= ()=>{
       try {
         // const queries=req.avalaibleQueries
         // let requestedArticles=[];
-        const requestedArticle = await Article.findOne({
-          slug: req.params.articleSlug,
-          category: CUSTOM_CATEGORY_NAME,
-        });
+        const requestedArticle = await Article.findOne(
+          {
+            slug: req.params.articleSlug,
+            category: CUSTOM_CATEGORY_NAME,
+          },
+          { availableSizes: 1 }
+        );
 
           if (requestedArticle){
             const currentColor=requestedArticle.colors[0]
@@ -39,23 +43,20 @@ exports.getSpecificArticleByColor = () => {
     }
     try {
       const { articleSlug, colorId } = req.params;
-      console.log("colorId", articleSlug);
       const requestedArticle = await Article.findOne({
         slug: articleSlug,
         category: CUSTOM_CATEGORY_NAME,
       });
 
-      // console.log("\033;article: ",requestedArticle);
+      // //console.log("\033;article: ",requestedArticle);
 
 
       if(requestedArticle){
-        const isValidColor = [...requestedArticle.colors].map(ele=>String(ele)).includes(colorId);
-        console.log(isValidColor);
+        const isValidColor = [...requestedArticle.colors.map(ele=>ele.colorId)].map(ele=>String(ele)).includes(colorId);
         if(isValidColor){
             const requestedColor=await Color.findById(colorId)
             if(requestedColor){
-              const {otherViewImages,images, sex:colorSex}=requestedColor;
-              console.log("yessssssss");
+              const {otherViewImages,images, colorName,sex:colorSex}=requestedColor;
               return res.json({
                 found: true,
                 item: {
@@ -64,6 +65,7 @@ exports.getSpecificArticleByColor = () => {
                     otherViewImages,
                     images,
                     currentColorId: colorId,
+                    colorName
                   },
                 },
               });
@@ -77,31 +79,68 @@ exports.getSpecificArticleByColor = () => {
       }
 
     } catch (e) {
-      console.log(e.message);
+      //console.log(e.message);
       res.json({ message: ERROR_MESSAGE, found: false });
     }
   };
 };
 
-exports.getAll = (CUSTOM_CATEGORY_NAME)=>{
+exports.getSpecificArticlePrice=()=>{
+    return async (req, res, next) => {
+      const CUSTOM_CATEGORY_NAME = req.params.category;
+
+      if (CUSTOM_CATEGORIES.indexOf(CUSTOM_CATEGORY_NAME) == -1) {
+        return res.json({ message: ERROR_MESSAGE, found: false });
+      }
+      try {
+        const { articleSlug, colorId } = req.params;
+        //console.log("colorId", articleSlug);
+        const requestedArticle = await Article.findOne({
+          slug: articleSlug,
+          category: CUSTOM_CATEGORY_NAME,
+        },{price:1,colorId:colorId});
+
+
+        if (requestedArticle) {
+              return res.json({
+                found: true,
+                item: {
+                  ...requestedArticle._doc
+                },
+              });
+        } else {
+          return res.json({ message: NOT_FOUND_MESSAGE, found: false });
+        }
+      } catch (e) {
+        //console.log(e.message);
+        res.json({ message: ERROR_MESSAGE, found: false });
+      }
+    };
+}
+
+exports.getAll = ()=>{
   
   return async (req, res, next) => {
+    const  CUSTOM_CATEGORY_NAME=req.params.category
+    const page=parseInt(req.query["page"])||0
     if (CUSTOM_CATEGORIES.indexOf(CUSTOM_CATEGORY_NAME) == -1) {
       return res.json({ message: ERROR_MESSAGE, found: false });
-    }
-    try {
-      const avalaibleQueries = req.areAvailableQueries;
-      const requestedArticles = await Article.find({
-        category: CUSTOM_CATEGORY_NAME,
-        ...avalaibleQueries,
-      });
-
-      if (requestedArticles) {
-        res.json({ found: true, items: requestedArticles });
+    }else{      
+      try {
+        const avalaibleQueries = req.areAvailableQueries;
+        const requestedArticles = await Article.find({
+          category: CUSTOM_CATEGORY_NAME,
+        }).skip(page).limit(10);
+  
+        if (requestedArticles) {
+          return res.json({ found: true, items: requestedArticles });
+        }else{
+          res.json({ found: false, message: NOT_FOUND_MESSAGE });
+        }
+      } catch (e) {
+        //console.log(e.message);
+        res.json({ found: false, message: ERROR_MESSAGE });
       }
-      res.json({ found: false, message: NOT_FOUND_MESSAGE });
-    } catch (e) {
-      res.json({ found: false, message: ERROR_MESSAGE });
     }
   };
 }
@@ -109,10 +148,8 @@ exports.getAll = (CUSTOM_CATEGORY_NAME)=>{
 
 exports.getSubCategory=()=>{
   return async (req, res)=>{
-    console.log("fetch for subCategories");
     const {category:CUSTOM_CATEGORY_NAME}=req.params;
     const {subCategory:CUSTOM_SUBCATEGORY}=req.query;
-    console.log(req.params);
     if (CUSTOM_CATEGORIES.indexOf(CUSTOM_CATEGORY_NAME) == -1) {
       return res.json({ message: ERROR_MESSAGE, found: false });
     }
@@ -130,7 +167,7 @@ exports.getSubCategory=()=>{
       return res.json({ found: false, message: NOT_FOUND_MESSAGE });
 
     }catch(e){
-      console.log(e.message);
+      //console.log(e.message);
         return res.json({ found: false, message: ERROR_MESSAGE });
 
     }

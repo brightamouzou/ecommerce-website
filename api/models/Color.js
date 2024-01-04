@@ -9,7 +9,7 @@ const Schema=mongoose.Schema;
 
 const colorShema=new Schema({
     colorName:{type:String},
-    articleId:{type:String}, 
+    articleId:{type:Schema.Types.ObjectId,ref:"Article"}, 
     url:{type:String},
     category: {type:String},
     subCategories:{type:Array},

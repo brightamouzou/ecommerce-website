@@ -1,0 +1,118 @@
+.m1{
+    margin: 1px;
+}
+
+.m2{
+    margin: 2px;
+}
+
+.m3{
+    margin: 3px;
+}
+
+.m5 {
+    margin: 5px;
+}
+
+.m-auto{
+    margin: auto;
+}
+.m3{
+    margin: 3px;
+}
+
+.t-justify {
+    text-align: justify;
+}
+.t-center {
+    text-align: center;
+}.t-right {
+    text-align: right;
+}
+
+.t-success{
+    color: #16b84e;
+}
+.t-danger {
+    color: red;
+}
+
+.t-disabled{
+    color: $cl-gray !important;
+}
+
+.t-warning{
+    color: #ff7f00;
+    // color:#004769;
+}
+
+
+.t-bold{
+    font-weight: bold;
+}
+.b-danger{
+    border: 1.5px solid red !important;
+}
+
+.b-success{
+    border: 1.5px #16b84e solid !important;
+}
+//Displays 
+.d-flex{
+    display: flex !important;
+    &.justify-center{
+        justify-content: center !important;
+    }
+
+    &.justify-end{
+        justify-content: flex-end !important;
+    }
+
+    &.justify-start{
+        justify-content: flex-start !important;
+    }
+
+    &.align-center{
+        align-items: center !important;
+
+    }
+
+    &.align-end{
+        align-items: flex-end !important;  
+    }
+    &.align-start{
+        align-items: flex-start !important;
+    }
+}
+
+.d-i-block{
+    display: inline-block !important;
+    
+    &.va-top{
+        vertical-align: top !important;
+    }
+
+    &.va-bottom{
+        vertical-align: bottom !important;
+    }
+
+    &.va-baseline{
+        vertical-align: baseline !important;
+    }
+
+}
+
+
+//@at-root
+.after-visible{
+    &::after{
+        width: 100% !important;
+        transition: .2s;
+    }
+}
+
+.after-hidden{
+    &::after{
+        width: 0 !important;
+    }
+}

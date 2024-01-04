@@ -8,9 +8,17 @@ router.post('/new-article',async (req, res)=>{
     console.log(req.body);
     // res.status(200).json({message:"bien"});
     
-    const{
-        name, category,subCategories,price,sex,availableQuantity, colors, description
-    }=req.body;
+    const {
+      name,
+      category,
+      subCategories,
+      price,
+      sex,
+      availableQuantity,
+      availableSizes,
+      colors,
+      description,
+    } = req.body;
 
     console.log(colors);
     const slug=name.toLowerCase().replaceAll(" ", "-")
@@ -26,6 +34,7 @@ router.post('/new-article',async (req, res)=>{
           description,
           sex,
           availableQuantity,
+          availableSizes,
           url,
         });
         const savedArtcile=await newArticle.save()
@@ -58,7 +67,14 @@ router.post('/new-article',async (req, res)=>{
                         console.log("success");
                         console.log(savedColors);
                         await savedArtcile.update({
-                            colors: savedColors.filter((color) => color !== null).map((color) => color._id),
+                            colors: savedColors.filter((color) => color !== null).map((color) =>{
+                                console.log("color",color.colorName);
+                                console.log("id", color._id);
+                                return {
+                                  name: color.colorName,
+                                  colorId: String(color._id),
+                                };
+                            })
                         });
                         return res.json({ message: "success" });
                     })

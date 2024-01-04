@@ -1,0 +1,33 @@
+.articleCategoryList{
+    // text-align: center;
+    width: auto;
+    margin: auto;
+    &__item{
+        margin-right: 5px;
+        display: inline-block;
+        vertical-align:top;
+        width: 32.5% !important;
+
+        &:hover{
+            border: none;
+        }
+
+        &:hover>&__img>&__price {
+            transform: none !important;
+        }
+    }
+    svg{
+        width: 25px;
+        height: 25px;
+    }
+
+    @media(max-width: 665px){
+        &__item{
+            width: 48% !important;
+
+            &:hover {
+                border: none;
+            }
+        }
+    }
+}

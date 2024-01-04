@@ -5,9 +5,9 @@ const {ERROR_MESSAGE, CUSTOM_CATEGORIES, NOT_FOUND_MESSAGE}=require("../../utils
 exports.getFromCategoryAndSex = (customSex) => {
     return async (req, res) => {
       const page=parseInt(req.query.page)||0;
-        console.log(req.params);
+        // console.log(req.params);
         try {
-        console.log("\033[0;31m Requete pour shoes hommes");
+        // console.log("\033[0;31m Requete pour shoes hommes");
       const customCategory = req.params.category;
       if (CUSTOM_CATEGORIES.indexOf(customCategory) == -1) {
         return res.json({ message: ERROR_MESSAGE, found: false });
@@ -25,10 +25,10 @@ exports.getFromCategoryAndSex = (customSex) => {
         category: customCategory,
         sex: customSex,
       });
-      console.log(
-        "\ncurrentCategoryArticles2Colors ",
-        currentCategoryArticles2Colors
-      );
+      // console.log(
+      //   "\ncurrentCategoryArticles2Colors ",
+      //   currentCategoryArticles2Colors
+      // );
 
       if (!currentCategoryArticles1 && !currentCategoryArticles2Colors.length) {
         return res.json({ found: false, message: NOT_FOUND_MESSAGE });
@@ -36,7 +36,7 @@ exports.getFromCategoryAndSex = (customSex) => {
         return res.json({ found: true, items: currentCategoryArticles1 });
       }
 
-      console.log("Bienvenue ici");
+      // console.log("Bienvenue ici");
       // Group colors by article id because many Color instances might have the same colorId
       const colorsGroupedByArticle = {};
       if (currentCategoryArticles2Colors) {
@@ -48,12 +48,12 @@ exports.getFromCategoryAndSex = (customSex) => {
           colorsGroupedByArticle[articleId].push(String(_id));
         });
       }
-      console.log("colorsGroupedByArticle", colorsGroupedByArticle);
+      // console.log("colorsGroupedByArticle", colorsGroupedByArticle);
       //Join artcile1 and article2
       if (currentCategoryArticles2Colors) {
         let currentCategoryArticles2Fetching = Promise.all(
           Object.keys(colorsGroupedByArticle).map(async (articleId) => {
-            console.log("the Id",articleId);
+            // console.log("the Id",articleId);
             return  Article.findOne({
               _id: articleId,
               category:"all"
@@ -67,7 +67,7 @@ exports.getFromCategoryAndSex = (customSex) => {
             currentCategoryArticles2 = currentCategoryArticles1.filter(
               (ele) => ele !==null
             );
-            console.log("articles trouvés", currentCategoryArticles2);
+            // console.log("articles trouvés", currentCategoryArticles2);
             const currentCategoryDefinitiveArticles = [
               ...currentCategoryArticles1,
             
@@ -85,7 +85,7 @@ exports.getFromCategoryAndSex = (customSex) => {
             res.json({ found: true, items: currentCategoryDefinitiveArticles });
           })
           .catch((err) => {
-            console.log(err);
+            // console.log(err);
             return res.json({ found: false, message: ERROR_MESSAGE });
           });
       } else {
@@ -96,7 +96,7 @@ exports.getFromCategoryAndSex = (customSex) => {
 
       // res.json({ found: true, items: currentCategoryDefinitiveArticles });
     } catch (e) {
-      console.log(e.message);
+      // console.log(e.message);
     }
   };
 };

@@ -1,0 +1,30 @@
+.mobileAppDown{
+    min-height: 150px;
+    min-width: 100%;
+    color: $cl-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $cl-darked-blue;
+    margin: 0;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 15px;
+
+    @media(max-width:960px){
+        font-size: 19px;
+    }
+    .container{
+        height: fit-content;
+        width: fit-content;
+    }
+    button{
+        font-size: 17px;
+        padding: 10px;
+        display: block;
+        margin: 15px auto;
+        font-size: $ff-header-links;
+        color: $cl-black !important;
+
+    }
+}
