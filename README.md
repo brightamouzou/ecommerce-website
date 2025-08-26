@@ -16,7 +16,7 @@ Stripe API
 
 ### Installation
 
-1.  git clone https://github.com/brightamouzou/ecommerce-website  
+1.  git clone https://github.com/brightamouzou/ecommerce-website.git  
 2.  cd ecommerce-website
 3.  npm install
 4.  npm start
