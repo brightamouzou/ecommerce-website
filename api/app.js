@@ -3,7 +3,6 @@ const express=require("express");
 const app=express();
 const mongoose=require("mongoose");
 const path=require("path");
-const helmet=require("helmet");
 const morgan=require("morgan");
 const verifyReqQueries=require("./middlewares/getQueries")
 const cors = require("cors");
@@ -23,7 +22,7 @@ require("dotenv").config();
 
 //Uses
 // app.use(helmet())
-// app.use(cors(""))
+app.use(cors(""))
 app.use(morgan("dev"));
 app.use(express.json());
 
