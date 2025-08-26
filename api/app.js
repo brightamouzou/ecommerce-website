@@ -65,7 +65,12 @@ app.use("/api/users",userRoutes);
 app.use("/api/admin", adminRoutes);
 
 
-//Serve frontend
+// 
+
+/**
+ * Commented 26/08/2025
+ * 
+ * //Serve frontend
 // if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
 
@@ -82,6 +87,8 @@ app.use("/api/admin", adminRoutes);
 //     console.log("Run to production");
 
 // }
+ */
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log("Running on", port));
 

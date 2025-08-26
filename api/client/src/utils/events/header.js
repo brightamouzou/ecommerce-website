@@ -4,9 +4,8 @@ export function headerMenuItems(){
     window.onload=()=>{
         const menuItems=document.querySelectorAll(".menu__item");
         menuItems.forEach(item=>{
-    
             item.addEventListener('mouseenter', ()=>{
-                const tmp=item.childNodes[0].childNodes.at(-1);
+                const tmp=[...item.childNodes[0].childNodes].at(-1);
                 tmp.classList.add("after-visible");
        
             })

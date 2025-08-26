@@ -2,7 +2,7 @@ import { Color, Artcile, descriptions_lifestyle } from "./article.js";
 
 
 const color11 = new Color(
-  " Obsidienne/Bleu orage/Racine de garance clair/Marina",
+  "Obsidienne/Bleu orage/Racine de garance clair/Marina",
   "shoes",
   {
     small:
