@@ -26,7 +26,7 @@ Stripe API
 
 ### Deployment
 
-Try it [here](https://bright-ecommerce.herokuapp.com)!
+Try it [here](https://bright-ecommerce.onrender.com/)!
 
 ### Others
 
