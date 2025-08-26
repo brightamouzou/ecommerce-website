@@ -14,7 +14,6 @@ html{
 
     &[data-is-dark]{
         @include theme-colors($light-theme:false);
-        
     }
     transition: all ease-in .2s; 
 

@@ -40,7 +40,7 @@ function CartItems() {
       <h2>Panier</h2><br />
       {cartItems.length?
       (
-        cartItems.map((item, index) => {
+        cartItems?.map((item, index) => {
         return (
           <CartItem
             key={index}

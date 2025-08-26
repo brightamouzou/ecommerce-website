@@ -1,7 +1,6 @@
 //btn
 
 @mixin btnBehaviour($hover-bg:$btn-hover-bg-primary, $min-width:$btn-min-width, $padding:$btn-min-padding, $margin:$btn-min-margin) {
-    
     min-width: $btn-min-width;
     padding: $padding;
     margin: $margin;
